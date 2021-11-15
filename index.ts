@@ -1,16 +1,17 @@
 import conectarBD from "./db/db";
 import { UserModel } from "./models/user";
 import { Enum_Rol } from "./models/enums";
+import { getParsedCommandLineOfConfigFile } from "typescript";
 
 const main = async () =>{
     await conectarBD();
 
     //Crear usuario
     // UserModel.create({
-    //     correo: 'aleonardorm@itc.edu.co',
-    //     identificacion: '321654929',
+    //     correo: 'ramirezleo52@gmail.com',
+    //     identificacion: '324655929',
     //     nombre: 'leonardo',
-    //     apellido: 'Mahecha',
+    //     apellido: 'Ramirez',
     //     rol: Enum_Rol.estudiante,
     // })
     //     .then((u) => {
@@ -21,7 +22,7 @@ const main = async () =>{
     //     });
 
 
-    // hacer consultas - Obtener los usuarios
+    // hacer consultas - Obtener los todos los usuarios
     // await UserModel.find()
     //     .then((u) =>{
     //         console.log('usuarios', u);
@@ -29,6 +30,39 @@ const main = async () =>{
     //     .catch((e) =>{
     //         console.error('Error obteniendo los usuarios', e);
     // });
+
+    //Obtener un solo usuario
+    // await UserModel.findOne({ identificacion: '32165498'})
+    //     .then((u)=>{
+    //         console.log('Usuario encontrado ',u);
+    //     })
+    //     .catch(e=>{
+    //         console.log('Error al buscar un usuario', e)
+    //     });
+
+    //Editar un usuario
+    // await UserModel.findOneAndUpdate({ correo: 'ramirezleo52@gmail.com'}, {
+    //     nombre: 'Angel',
+    //     rol: Enum_Rol.administrador,
+    // })
+    //     .then((u)=>{
+    //         console.log('Usuario Actualizado', u);
+    //     })
+    //     .catch(e=>{
+    //         console.error('Error Actualizando', e)
+    //     });
+
+    //Eliminar un Usario
+    // await UserModel.findOneAndDelete({correo: 'ramirezleo52@gmail.com'})
+    //     .then((u)=>{
+    //         console.log('Usuario Eliminado', u);
+    // })
+    //     .catch(e=>{
+    //         console.error('Error al elminar un usuario',e);
+    // });
+
+    
+
 };
 
 main();
