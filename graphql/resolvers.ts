@@ -7,6 +7,10 @@ const resolvers = {
             const usuarios = await UserModel.find();
             return usuarios;
         },
+        Usuario: async (parent, args) => {
+            const usuario = await UserModel.findOne({_id: args._id});
+            return usuario;
+        },
     },
     //Estos son los elementos dela mutacion, que me permiten ller desde Graphql y enviar a la BD
     Mutation:{
