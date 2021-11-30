@@ -26,5 +26,5 @@ app.listen({port: process.env.PORT || 4000}, async () => {
 
     server.applyMiddleware({ app });
 
-    console.log('Servidor Listo!!');
+    console.log('Servidor GraphQL Listo!!');
 });
