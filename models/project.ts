@@ -11,7 +11,7 @@ interface Proyecto {
     estado:Enum_EstadoProyecto;
     fase:Enum_FaseProyecto;
     lider:Schema.Types.ObjectId;
-    obejtivos:[{descripcion: String; tipo: Enum_TipoObjetivo}];
+    objetivos:[{descripcion: String; tipo: Enum_TipoObjetivo}];
     
 }
 
@@ -35,19 +35,19 @@ const projectSchema = new Schema<Proyecto>({
     estado:{
         type:String,
         enum: Enum_EstadoProyecto,
-        default: Enum_EstadoProyecto.inactivo,
+        default: Enum_EstadoProyecto.INACTIVO,
     },
     fase:{
         type:String,
         enum: Enum_FaseProyecto,
-        default: Enum_FaseProyecto.nula,
+        default: Enum_FaseProyecto.NULO,
     },
     lider:{
         type:Schema.Types.ObjectId,
         required: true,
         ref: UserModel,
     },
-    obejtivos:[
+    objetivos:[
         {
             descripcion:{
                 type: String,

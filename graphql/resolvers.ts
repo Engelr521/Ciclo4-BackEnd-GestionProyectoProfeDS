@@ -1,4 +1,5 @@
 import { argsToArgsConfig } from "graphql/type/definition";
+import { ProjectModel } from "../models/project";
 import { UserModel } from "../models/user";
 
 const resolvers = {
@@ -11,6 +12,11 @@ const resolvers = {
             const usuario = await UserModel.findOne({_id: args._id});
             return usuario;
         },
+        Proyectos: async(parent, args) => {
+            const proyectos = await ProjectModel.find().populate('lider');
+            return proyectos;
+        },
+
     },
     //Estos son los elementos dela mutacion, que me permiten ller desde Graphql y enviar a la BD
     Mutation:{

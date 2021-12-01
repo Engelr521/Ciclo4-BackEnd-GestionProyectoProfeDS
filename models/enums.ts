@@ -11,25 +11,25 @@ enum Enum_Rol{
 }
 
 enum Enum_EstadoProyecto{
-    activo = 'Activo',
-    inactivo = 'Incativo',
+    ACTIVO = 'ACTIVO',
+    INACTIVO = 'INACTIVO',
 }
 
 enum Enum_FaseProyecto{
-    iniciado = 'Iniciado',
-    desarrollo = 'En Desarrollo',
-    terminado = 'Terminado',
-    nula = '',
+    INICIADO = 'INICIADO',
+    DESARROLLO = 'DESARROLLO',
+    TEMONADO = 'TEMINADO',
+    NULO = '',
 }
 
 enum Enum_TipoObjetivo{
-    general = 'General',
-    especifico = 'Especifico',
+    GENERAL = 'GENERAL',
+    ESPECIFICO = 'ESPECIFICO',
 }
 
 enum Enum_EstadoInscripcion{
-    aceptada = 'Aceptada',
-    rechazada = 'Rechazada',
+    ACEPTADA = 'ACEPTADA',
+    RECHAZADA = 'RECHAZADA',
 }
 
 export {Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto, Enum_FaseProyecto, Enum_TipoObjetivo, Enum_EstadoInscripcion,};
