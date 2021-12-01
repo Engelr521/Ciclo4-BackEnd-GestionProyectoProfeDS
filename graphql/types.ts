@@ -42,9 +42,14 @@ const typeDefs = gql`
         estado: Enum_EstadoUsuario!
         rol: Enum_Rol!
     }
-
+    # Este type es para poder realizar la consulta de los objetivos en el query
     type Objetivo{
         _id: ID!
+        descripcion: String!
+        tipo: Enum_TipoObjetivo!
+    }
+    # Este Inoput, es para pa creacion de los objetivos dentro de la mutacion de creacion proyectos
+    input crearObjetivo{
         descripcion: String!
         tipo: Enum_TipoObjetivo!
     }
@@ -97,7 +102,7 @@ const typeDefs = gql`
             estado:Enum_EstadoProyecto!
             fase:Enum_FaseProyecto!
             lider:String!
-            # objetivos:[Objetivo]
+            objetivos:[crearObjetivo]
         ): Proyecto
     } 
 
