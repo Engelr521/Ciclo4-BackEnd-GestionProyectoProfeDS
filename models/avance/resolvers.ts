@@ -4,7 +4,7 @@ import { ModeloAvance } from "./avance";
 const resolverAvance = {
     Query:{
         Avances: async (parent, args) => {
-            const avances = await ModeloAvance.find();
+            const avances = await ModeloAvance.find().populate('proyecto').populate('creadoPor');
             return avances;
         },
     },
