@@ -18,7 +18,7 @@ enum Enum_EstadoProyecto{
 enum Enum_FaseProyecto{
     INICIADO = 'INICIADO',
     DESARROLLO = 'DESARROLLO',
-    TEMONADO = 'TEMINADO',
+    TERMINADO = 'TERMINADO',
     NULO = '',
 }
 

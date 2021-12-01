@@ -54,6 +54,19 @@ const resolvers = {
                 return usuarioEliminado;
             }
         },
+        crearProyecto: async (parent, args) => {
+            const proyectoCreado = await ProjectModel.create({
+                nombre: args.nombre,
+                estado: args.estado,
+                fase: args.fase,
+                fechaInicio: args.fechaInicio,
+                fechaFin: args.fechaFin,
+                presupuesto: args.presupuesto,
+                lider: args.lider,
+                objetivos: [{descripcion: "Este es el opbjetivo General", tipo: "GENERAL"}]
+            });
+            return proyectoCreado;
+        },
     },
 };
 
