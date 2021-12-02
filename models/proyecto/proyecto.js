@@ -64,8 +64,20 @@ const projectSchema = new Schema(
         },
     ],
     
-});
+},
+//Para que fucnione el Virtual populate, toca poner las siguientes variables
+{
+    toJSON: {virtuals: true},
+    toObject: {virtuals: true},
+}
+);
 
+// Virtual Populate, para traer info de varias colecciones.
+projectSchema.virtual("avances", {
+    ref: 'Avance',
+    localField: "_id",
+    foreignField: 'proyecto'
+});
 
 const ProjectModel = model("Proyecto", projectSchema, "proyectos");
 
