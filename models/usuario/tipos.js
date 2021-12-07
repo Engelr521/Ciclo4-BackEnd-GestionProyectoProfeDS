@@ -26,6 +26,7 @@ const tiposUsuario = gql`
             correo: String!
             estado: Enum_EstadoUsuario
             rol: Enum_Rol!
+            clave: String!
         ):Usuario
 
         editarUsuario(
@@ -34,8 +35,8 @@ const tiposUsuario = gql`
             apellido: String!
             identificacion: String!
             correo: String!
-            estado: Enum_EstadoUsuario
-            rol: Enum_Rol!
+            estado: Enum_EstadoUsuario!
+
         ):Usuario
 
         eliminarUsuario(_id:String, correo: String): Usuario

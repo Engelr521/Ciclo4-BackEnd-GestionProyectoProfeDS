@@ -29,6 +29,12 @@ const userSchema = new Schema(
             message: 'El formato del correo electronico es malo.',
         },
     },
+
+    clave:{
+        type: String,
+        required: true,
+    },
+
     identificacion:{
         type: String,
         required: true,
